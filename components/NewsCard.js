@@ -33,3 +33,4 @@ const NewsCard = ({ article }) => {
 };
 
 export default NewsCard;
+    
