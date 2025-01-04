@@ -4,13 +4,15 @@ import axios from "axios";
 import NewsCard from "@/components/NewsCard";
 import LoadingCard from "@/components/LoadingCard";
 
-const API_KEY = "3dbfd46da35947e797172c4d07741814"; // Replace with your actual API key
-const BASE_URL = "https://newsapi.org/v2/everything";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(12); // Start with 12 news
   const [loading, setLoading] = useState(false);
+
+  const API_KEY = "3dbfd46da35947e797172c4d07741814"; // Replace with your actual API key
+  const BASE_URL = "https://newsapi.org/v2/everything";
+
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -27,9 +29,9 @@ const App = () => {
           },
         },{
           headers: {
-            'Accept': 'application/json', // Adjust based on API requirements
-            'API-Version': '1.0', // If versioning is required
-          },
+    'Accept': 'application/json', // Adjust based on API requirements
+    'API-Version': '1.0', // If versioning is required
+  },
         });
         setArticles(response.data.articles);
       } catch (error) {
