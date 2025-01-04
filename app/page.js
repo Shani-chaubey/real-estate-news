@@ -25,6 +25,11 @@ const App = () => {
               "economictimes.indiatimes.com,livemint.com,business-standard.com",
             apiKey: API_KEY,
           },
+        },{
+          headers: {
+            'Accept': 'application/json', // Adjust based on API requirements
+            'API-Version': '1.0', // If versioning is required
+          },
         });
         setArticles(response.data.articles);
       } catch (error) {
